@@ -9,6 +9,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <functional>
 
 #include <fcntl.h>
 #include <unistd.h>
@@ -25,5 +26,6 @@ namespace clardis
 bool parse_long(const char *s, long *n);
 long now_us();
 void log(const char *fmt, ...);
+size_t key_hash(const std::string &s);
 
 }

@@ -33,4 +33,15 @@ void log(const char *fmt, ...)
     printf("\n");
 }
 
+size_t key_hash(const std::string &s)
+{
+    size_t sz = s.size();
+    size_t h = sz;
+    for (size_t i = 0; i < sz; ++ i)
+    {
+        h = (h + (unsigned char)s[i]) * 1000003;
+    }
+    return h;
+}
+
 }

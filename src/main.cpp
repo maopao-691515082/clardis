@@ -1,5 +1,6 @@
 #include "util.h"
 #include "cmd.h"
+#include "db.h"
 #include "worker.h"
 #include "server.h"
 
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
     long worker_count;
     assert(parse_long(argv[1], &worker_count));
     init_cmd_infos();
+    init_db();
     init_workers(worker_count);
     start_server();
 

@@ -160,6 +160,8 @@ Client::Client(int fd, struct bufferevent *buf_ev)
     this->fd        = fd;
     this->buf_ev    = buf_ev;
 
+    this->req_buf_curr_sz = 0;
+
     this->req_parser_stat = REQ_PARSER_STAT_START;
 }
 
